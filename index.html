@@ -4290,7 +4290,7 @@
         let currentQuestionIndex = 0;
         let userAnswers = [];
         let timerInterval = null;
-        let timeRemaining = 1800; // 30 minutes in seconds for exam mode
+        let timeRemaining = 1500; // 25 minutes in seconds for exam mode
 
         // Dark Mode Toggle
         function toggleDarkMode() {
@@ -4408,8 +4408,8 @@
             
             // Apply question limits based on mode
             if (currentMode === 'practice') {
-                // Practice Mode: Always exactly 10 questions, randomly shuffled
-                currentQuestions = shuffleArray(allQuestions).slice(0, 10);
+                // Practice Mode: Always exactly 20 questions, randomly shuffled
+                currentQuestions = shuffleArray(allQuestions).slice(0, 20);
             } else {
                 // Exam Mode: Always 20 questions
                 if (allQuestions.length < 20) {
@@ -4424,7 +4424,7 @@
             // Initialize quiz state
             currentQuestionIndex = 0;
             userAnswers = new Array(currentQuestions.length).fill(null);
-            timeRemaining = 1800; // Reset to 30 minutes
+            timeRemaining = 1500; // Reset to 25 minutes
             
             // Start timer for exam mode
             if (currentMode === 'exam') {
@@ -4621,7 +4621,7 @@
             // Reset state
             currentQuestionIndex = 0;
             userAnswers = new Array(currentQuestions.length).fill(null);
-            timeRemaining = 1800; // Reset to 30 minutes
+            timeRemaining = 1500; // Reset to 25 minutes
             
             // Reshuffle based on mode rules
             if (currentMode === 'practice') {
